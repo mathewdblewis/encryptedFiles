@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Token Display</title>
+    <title>URL Query Parameter Extraction</title>
 </head>
 <body>
-    <h1>Token Display</h1>
-    <p id="token-display"></p>
+    <h1>URL Query Parameter Extraction</h1>
+    <p id="parameter-display"></p>
 
     <script>
-        // Function to extract the value of the "token" key from the URL query string
-        function getParameterValue(key) {
+        // Function to extract the value of a specific parameter from the URL query string
+        function getParameterValue(parameter) {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(key);
+            return urlParams.get(parameter);
         }
 
-        // Get the value of the "token" key from the URL query string
-        const token = getParameterValue("token");
+        // Get the value of the "token" parameter from the URL query string
+        const tokenValue = getParameterValue("token");
 
-        // Display the token on the page
-        const tokenDisplayElement = document.getElementById("token-display");
-        tokenDisplayElement.textContent = "Token: " + token;
+        // Display the parameter value on the page
+        const parameterDisplayElement = document.getElementById("parameter-display");
+        parameterDisplayElement.textContent = "Token: " + tokenValue;
     </script>
 </body>
 </html>
